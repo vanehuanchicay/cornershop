@@ -22,7 +22,7 @@
     margin: 280px 0 265px;
 }
 .modalBtn{
-    margin-top: 28%;
+    margin-top: 23%;
 }
 .modalBtn :nth-child(2){
     float: right;
@@ -70,39 +70,67 @@
 }
 .refreshBtn :nth-child(1){
     position: absolute;
-    margin-left: 25px;
+    margin-left: 21px;
     color: #4A4A4A;
-    font-size: 26px;
-    margin-top: -7px;
+    font-size: 19px;
+    margin-top: -1px;
 }
 .listOfCounters li{
+    padding-top: 7px;
     display: flex;
+    width: 65%;
 }
 .leftTitle{
+    margin-top: 10px;
     float: left;
-    width: 56%;
+    width: 116%;
     overflow: hidden;
+}
+.leftTitle p{
+    padding-left: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #212121;
+    font-weight: normal;
 }
 .rightCounters{
     display: flex;
     float: left;
     width: 25%;
 }
-.refreshingTxt{
+.conteinerTxt .refreshingTxt{
     margin-top: 0px;
-    margin-left: 46px;
+    margin-left: 40px;
 }
 .conteinerTxt{
     display: flex;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #4A4A4A;
+}
+.conteinerTxt span{
+    margin-left: 7px;
+    font-size: 17px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #888B90;
 }
 .selectElement{
     cursor :pointer
 }
-/* .t718fc59b-24ee-4252-9492-5e36e872435a {
-    color: #ff9500;
-    background: #fff;
-    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 40%);
-} */
+.stateSelected{
+    background: rgba(255, 149, 0, 0.269);
+    border-radius: 6px;
+  }
+.stateNoSelected{
+    border-radius: 6px;
+  }
 
 @media screen and (max-width: 688px) {
     .loading{
@@ -112,7 +140,7 @@
         margin-top: 60%;
     }
     .modalBtn :nth-child(2){
-        margin: 9px 0 0 0;
+        margin: 9px 0 9px 0;
         float: right;
     }
     .inputSearch input{
@@ -131,9 +159,16 @@
         margin: 20px 0 0 0;
    } 
     .leftTitle{
-        width: 68%;
+        margin-top: 10px;
+        width: 58%;
    }
     .leftTitle h3{
         margin-top: 9px;
+    }
+    .listOfCounters li{
+        width: 100%;
+    }
+    .conteinerTxt, .conteinerTxt span{
+        font-size: 15px;
     }
 }

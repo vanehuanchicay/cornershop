@@ -28,7 +28,7 @@ const DeleteCounter = (props) => {
                 <Button className="trashIcon" onClick={showAlert}><TrashBinIcon /></Button>
                 <Alert
                     isVisible={isAlertVisible}>
-                    <Alert.Title>Delete the “Records played” counter?</Alert.Title>
+                    <Alert.Title>Delete the "{props.counterTitle}" counter?</Alert.Title>
                     <Alert.Message>This cannot be undone.</Alert.Message>
                     <Alert.Actions>
                         <Button kind="raised" onClick={hideAlert}>Cancel </Button>
@@ -42,7 +42,7 @@ const DeleteCounter = (props) => {
                 {hasError ? (
                     <Alert
                         isVisible={isAlertVisible}>
-                        <Alert.Title>Couldn’t delete “Records played”</Alert.Title>
+                        <Alert.Title>Couldn’t delete “{props.counterTitle}”</Alert.Title>
                         <Alert.Message>The Internet connection appears to be offline.</Alert.Message>
                         <Alert.Actions>
                             <Button kind="raised" onClick={deleteCounter}>

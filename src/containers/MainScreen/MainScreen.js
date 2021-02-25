@@ -5,8 +5,6 @@ import Counter from '../../components/Counter/Counter';
 import DeleteCounter from '../../components/DeleteCounter/DeleteCounter';
 import ToolTip from '../../components/ToolTip/ToolTip';
 import { IoIosRefresh, IoIosSearch } from 'react-icons/io';
-// import ReactTooltip from "react-tooltip";
-
 import './MainScreen.css';
 
 class MainScreen extends Component {
@@ -20,13 +18,25 @@ class MainScreen extends Component {
             search: '',
             isRefreshing: false,
             isSelected: false,
-            sendIdCounter: ''
+            sendIdCounter: '',
+            sendCountCounter: 0,
+            totalSumCount: 0
         }
     }
     componentDidMount() {
         this.setState({ isLoading: true });
         setTimeout(() => { this.getCouter() }, 1200);
+        document.addEventListener("click", this.handleDocumentClick);
     }
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleDocumentClick);
+    }
+    handleDocumentClick = e => {
+        const isClosest = e.target.closest('.listOfCounters, button, .popover-inner');
+        if (!isClosest) {
+            this.setState({ isSelected: false });
+        }
+    };
 
     getCouter = () => {
         fetch('/api/v1/counter', { method: 'get', headers: { "Content-Type": "application/json" } })
@@ -52,8 +62,7 @@ class MainScreen extends Component {
         this.setState({ isRefreshing: true })
         setTimeout(() => {
             const totalCount = this.state.countersArr.map(elem => elem.count);
-            const totalSumCount = totalCount.reduce((a, b) => a + b, 0);
-            this.setState({ totalSumCount });
+             this.state.totalSumCount = totalCount.reduce((a, b) => a + b, 0);
         }, 1000);
         setTimeout(() => { this.setState({ isRefreshing: false }) }, 1000);
     }
@@ -64,18 +73,21 @@ class MainScreen extends Component {
         this.getCouter();
         this.setState({ countersArr: [] });
     }
-    handleSelect = (id) => {
-        this.setState({ isSelected: true, sendIdCounter: id }) // si toca otro lugar cambiar a falso
+    handleSelect = (id, count, title) => {
+        this.setState({ isSelected: true, sendIdCounter: id, sendCountCounter: count, sendTitleCounter: title })
     }
 
     render() {
-        const { isLoading, hasError, isEmpty, countersArr, totalSumCount, isRefreshing, isSelected, sendIdCounter } = this.state;
+        const { isLoading, hasError, isEmpty, countersArr, totalSumCount, isRefreshing, isSelected, sendIdCounter, sendCountCounter, sendTitleCounter } = this.state;
         let counterFilter = this.state.countersArr.filter(counter => {
             return counter.title.toLowerCase().includes(this.state.search.toLowerCase());
         })
 
+        const test = counterFilter.map(el => el.id);
+        const result = test.find(el => el === sendIdCounter)
+
         return (
-            <Fragment>
+            <Fragment >
                 <div className="inputSearch">
                     <IoIosSearch className="searchIcon" />
                     <Input placeholder="Search Counters" onChange={this.searchFilter} ></Input>
@@ -89,7 +101,7 @@ class MainScreen extends Component {
                 ) : null}
                 {!hasError && !isLoading && counterFilter.length !== 0 ? (
                     <ul className="listOfCounters">
-                        <p className="conteinerTxt"> {countersArr.length} items {totalSumCount} times <Button
+                        <p className="conteinerTxt"> {countersArr.length} items <span> {totalSumCount} times </span><Button
                             onClick={this.refreshCounters}
                             className="refreshBtn"> <IoIosRefresh /> </Button>
                             {isRefreshing ? (
@@ -102,9 +114,9 @@ class MainScreen extends Component {
                         {Object.keys(counterFilter).map(counterKey => {
                             return [...Array(counterFilter[counterKey])].map(counter => {
                                 return (
-                                    <li key={counter.id} >
+                                    <li key={counter.id} className={counter.id === result && isSelected ? "stateSelected" : "stateNoSelected"}>
                                         <div className="leftTitle" >
-                                            <h3 onClick={() => { this.handleSelect(counter.id) }}>{counter.title}</h3>
+                                            <p onClick={() => { this.handleSelect(counter.id, counter.count, counter.title) }}  >{counter.title}</p>
                                         </div>
                                         <div className="rightCounters">
                                             <Counter sendCounterId={counter.id}
@@ -137,8 +149,10 @@ class MainScreen extends Component {
                             <DeleteCounter
                                 counterId={sendIdCounter}
                                 fetchCounter={this.closeModal}
+                                counterTitle={sendTitleCounter}
                             />
-                            <ToolTip></ToolTip>
+                            <ToolTip totalCount={sendCountCounter}
+                            ></ToolTip>
                         </div>
                         <div className="modalBtn">
                             <hr />

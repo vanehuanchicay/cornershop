@@ -1,3 +1,4 @@
+
 :root {
   /* Colors */
   --app-tint: #ff9500;
@@ -45,6 +46,8 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Avenir Next', 'Avenir', 'Futura', 'Lucida Grande', Helvetica, Arial, Verdana, sans-serif;
+
 }
 
 html,

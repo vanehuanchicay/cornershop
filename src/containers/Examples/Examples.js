@@ -32,8 +32,8 @@ class Examples extends Component {
     render() {
         return (
             <Fragment>
-                <section>
-                    <h3>Drinks</h3>
+                <section className="sectionExamples">
+                    <p>Drinks</p>
                     {this.state.drinks.map(drinks => {
                         return <Button className="examplesBtn"
                             key={drinks.title}
@@ -42,7 +42,7 @@ class Examples extends Component {
                     })}
                 </section>
                 <section>
-                    <h3>Food</h3>
+                    <p>Food</p>
                     {this.state.food.map(food => {
                         return <Button className="examplesBtn"
                         key={food.title} 
@@ -51,7 +51,7 @@ class Examples extends Component {
                     })}
                 </section>
                 <section>
-                    <h3>Misc</h3>
+                    <p>Misc</p>
                     {this.state.misc.map(misc => {
                         return <Button className="examplesBtn"
                         key={misc.title}
@@ -64,4 +64,4 @@ class Examples extends Component {
     }
 }
 
-export default Examples
+export default Examples;

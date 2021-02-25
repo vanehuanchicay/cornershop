@@ -55,7 +55,7 @@ const CreateItemModal = ({fetchCounter}) => {
                 }
                 {!addExample ? (
                     <Modal.Body>
-                        <h3>Name</h3>
+                        <p className="nameTxt">Name</p>
                         <Input
                             placeholder="Ej: Cups of coffee"
                             type="text"
@@ -65,8 +65,8 @@ const CreateItemModal = ({fetchCounter}) => {
                         <span className="exampleText">Give it a name. Creative block? See</span> <Button className="exampleBtn" onClick={() => { setExampleState(true) }}><span>examples.</span></Button>
                     </Modal.Body>) : (
                         <Modal.Body>
-                            <p className="subtitle">Select an example to add it to your counters</p>
-                            <Examples handleExampleTitle={handleExampleTitle} ></Examples>
+                            <p className="subtitle">Select an example to add it to your counters.</p>
+                            <Examples handleExampleTitle={handleExampleTitle} />
                         </Modal.Body>
                     )}
                 {isLoading ? (<div className="loading"><Loading /></div>) : null}

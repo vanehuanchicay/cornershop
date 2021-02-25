@@ -14,3 +14,7 @@
     line-height: 20px;
     color: #888B90;
 }
+.sectionExamples p {
+    font-weight: 500;
+    font-size: 17px;
+}

@@ -2,18 +2,23 @@ import React from 'react';
 import { configure , shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import CreateItemModal from './CreateItemModal';
-import Modal from './CreateItemModal'
+import Examples from './CreateItemModal';
+import createCounter from './CreateItemModal'
 
 configure({adapter: new Adapter()});
 
-// describe('<CreateItemModal />', () => {
+describe('<CreateItemModal />', () => {
   
-//     it('should render Examples modal title if clicked example button example', () =>{
-//         const wrapper = shallow(<Modal />);
-//         expect(wrapper.find(CreateItemModal))
-//     })
-// })
-
-it("renders without crashing", () => {
+  it("should renders without crashing", () => {
     shallow(<CreateItemModal />);
   });
+
+  it('should createCounter to be truthy', () => {
+        expect(createCounter).toBeTruthy();
+    });
+  it('should render Example component', () => {
+    const wrapper = shallow(<CreateItemModal />);
+    expect(wrapper.find(Examples)).toBeTruthy();
+  });
+
+});

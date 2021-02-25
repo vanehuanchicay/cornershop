@@ -27,7 +27,7 @@
     background-color: transparent;
 }
 .btn-secondary{
-    background-color: transparent ;
+    background-color: transparent !important ;
     box-shadow: var(--with-shadow)!important;
     padding: 6px 24px!important;
     border-radius: var(--with-radius)!important;
@@ -39,11 +39,11 @@
     border: var(--with-border)!important;
     color:  var(--app-tint)!important;
 }
-.btn-secondary {
-    color: transparent; 
-    background-color: transparent; 
+/* .btn-secondary {
+    color: transparent !important; 
+    background-color: transparent !important; 
     border-color: transparent;
-}
+} */
 #copyBtn{
     color:  var(--app-tint);
     background-color: #FFFFFF;
