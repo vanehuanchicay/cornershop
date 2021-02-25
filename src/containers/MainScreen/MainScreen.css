@@ -1,0 +1,139 @@
+.loading{
+   margin-top: 13%;
+   text-align: -webkit-center;
+}
+.noContent h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 30px;
+    color: #000000;
+    text-align: center;
+}
+.noContent p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 23px;
+    text-align: center;
+    color: #4A4A4A;
+}
+.noContent{
+    margin: 280px 0 265px;
+}
+.modalBtn{
+    margin-top: 28%;
+}
+.modalBtn :nth-child(2){
+    float: right;
+    margin-right: 21%;
+}
+.selectedIcons{
+    display: flex;
+    float: left;
+    background-color: white;
+    margin: 11px 0 0 230px;
+}
+.shareIcon, .trashIcon{
+    background-color: white;
+    color: #2B2B2B;
+    margin-right: 18px;
+}
+.addItem{
+    margin-top: 3%;
+    float: right;
+}
+.inputSearch{
+    text-align: -webkit-center;
+}
+.inputSearch input{
+     width: 32%;
+     padding-left: 50px;
+}
+.searchIcon{
+    float: left;
+    margin: 12px 0 0 -238px;
+    position: absolute;
+}
+.listOfCounters{
+    list-style-type: none;
+    padding-left: 23%;
+    margin: 45px 0px;
+}
+.refreshBtn{
+    border-radius: 0;
+    color: #888B90;
+    background-color: transparent ;
+    box-shadow: none;
+    border-style: none;
+    padding: 0 !important;
+}
+.refreshBtn :nth-child(1){
+    position: absolute;
+    margin-left: 25px;
+    color: #4A4A4A;
+    font-size: 26px;
+    margin-top: -7px;
+}
+.listOfCounters li{
+    display: flex;
+}
+.leftTitle{
+    float: left;
+    width: 56%;
+    overflow: hidden;
+}
+.rightCounters{
+    display: flex;
+    float: left;
+    width: 25%;
+}
+.refreshingTxt{
+    margin-top: 0px;
+    margin-left: 46px;
+}
+.conteinerTxt{
+    display: flex;
+}
+.selectElement{
+    cursor :pointer
+}
+/* .t718fc59b-24ee-4252-9492-5e36e872435a {
+    color: #ff9500;
+    background: #fff;
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 40%);
+} */
+
+@media screen and (max-width: 688px) {
+    .loading{
+        margin-top: 44%;
+     }
+    .modalBtn{
+        margin-top: 60%;
+    }
+    .modalBtn :nth-child(2){
+        margin: 9px 0 0 0;
+        float: right;
+    }
+    .inputSearch input{
+        width: 100%;
+    }
+    .searchIcon{
+        margin: 12px 0 0 -138px;
+    }
+    .listOfCounters{
+        padding-left: 0;
+    }
+    .noContent{
+        margin: 186px 0 228px;
+    }
+    .selectedIcons{
+        margin: 20px 0 0 0;
+   } 
+    .leftTitle{
+        width: 68%;
+   }
+    .leftTitle h3{
+        margin-top: 9px;
+    }
+}

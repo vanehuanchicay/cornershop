@@ -1,0 +1,64 @@
+.popover{
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    transform: translate3d(292px, 338px, 0px);
+    width: 300px;
+    height: 102px;
+    padding-bottom: 47px;
+    background-color: #fafafa !important;
+    box-shadow: 0px 24px 38px rgb(0 0 0 / 14%);
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.popover-body {
+    display: inline-flex;
+    padding: 10px 0.75rem;
+    color: #212529;
+}
+.popover-header{
+    padding: 0.5rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    border-radius: 0;
+    border: none !important;
+    background-color: #fafafa !important;
+}
+.popover-inner{
+    background-color: transparent;
+}
+.btn-secondary{
+    background-color: transparent ;
+    box-shadow: var(--with-shadow)!important;
+    padding: 6px 24px!important;
+    border-radius: var(--with-radius)!important;
+    border: var(--with-border)!important;
+}
+.btn:hover, .btn:active, .btn:focus, .copyBtn:hover, .copyBtn:focus{
+    background-color: rgba(0,0,0,0.05) !important;
+    box-shadow: var(--with-shadow) !important;
+    border: var(--with-border)!important;
+    color:  var(--app-tint)!important;
+}
+.btn-secondary {
+    color: transparent; 
+    background-color: transparent; 
+    border-color: transparent;
+}
+#copyBtn{
+    color:  var(--app-tint);
+    background-color: #FFFFFF;
+    border-radius: var(--with-radius);
+    box-shadow: var(--with-shadow);
+    border: var(--with-border);
+    padding: 6px 24px;
+    font-weight: 600;
+    font-size: 17px;
+}
+/* .toolTipCard{
+    background-color: #fafafa !important;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    width: 100%;
+    
+} */
