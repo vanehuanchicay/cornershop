@@ -52,7 +52,7 @@
 }
 .searchIcon{
     float: left;
-    margin: 12px 0 0 -238px;
+    margin: 14px 0 0 -238px;
     position: absolute;
 }
 .listOfCounters{
@@ -127,10 +127,14 @@
 .stateSelected{
     background: rgba(255, 149, 0, 0.269);
     border-radius: 6px;
-  }
+}
 .stateNoSelected{
     border-radius: 6px;
-  }
+}
+.noResult{
+    text-align: -webkit-center;
+    margin: 247px 0 223px;
+}
 
 @media screen and (max-width: 688px) {
     .loading{
@@ -146,8 +150,8 @@
     .inputSearch input{
         width: 100%;
     }
-    .searchIcon{
-        margin: 12px 0 0 -138px;
+    .searchIcon {
+        margin: 15px 0 0 -138px;
     }
     .listOfCounters{
         padding-left: 0;
@@ -170,5 +174,9 @@
     }
     .conteinerTxt, .conteinerTxt span{
         font-size: 15px;
+    }
+    .noResult{
+        text-align: -webkit-center;
+        margin: 207px 0 223px;
     }
 }

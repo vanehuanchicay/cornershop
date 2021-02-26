@@ -39,11 +39,6 @@
     border: var(--with-border)!important;
     color:  var(--app-tint)!important;
 }
-/* .btn-secondary {
-    color: transparent !important; 
-    background-color: transparent !important; 
-    border-color: transparent;
-} */
 #copyBtn{
     color:  var(--app-tint);
     background-color: #FFFFFF;
@@ -54,11 +49,6 @@
     font-weight: 600;
     font-size: 17px;
 }
-/* .toolTipCard{
-    background-color: #fafafa !important;
-    border: none;
-    font-weight: 600;
-    font-size: 18px;
-    width: 100%;
-    
-} */
+.paperNote{
+    margin-left: 27px;
+}

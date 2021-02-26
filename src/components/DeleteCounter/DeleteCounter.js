@@ -1,6 +1,5 @@
-import React, { useState, Fragment, useEffect } from 'react';
-import { Button, Modal, useModal, useAlert, Alert, NewIcon, CloseIcon, Input, Loading, TrashBinIcon } from '../../assets/Ui';
-// import './CreateItemModal.css';
+import React, { useState, Fragment } from 'react';
+import { Button, useAlert, Alert, NewIcon, CloseIcon, Input, Loading, TrashBinIcon } from '../../assets/Ui';
 
 const DeleteCounter = (props) => {
     const { isVisible: isAlertVisible, hideAlert, showAlert } = useAlert();

@@ -31,9 +31,9 @@ class MainScreen extends Component {
     componentWillUnmount() {
         document.removeEventListener('click', this.handleDocumentClick);
     }
-    handleDocumentClick = e => {
+    handleDocumentClick = e => {        
         const isClosest = e.target.closest('.listOfCounters, button, .popover-inner');
-        if (!isClosest) {
+        if (!isClosest ) {
             this.setState({ isSelected: false });
         }
     };
@@ -71,7 +71,7 @@ class MainScreen extends Component {
     }
     closeModal = () => {
         this.getCouter();
-        this.setState({ countersArr: [] });
+        this.setState({ countersArr: [], isSelected: false });
     }
     handleSelect = (id, count, title) => {
         this.setState({ isSelected: true, sendIdCounter: id, sendCountCounter: count, sendTitleCounter: title })
@@ -83,9 +83,9 @@ class MainScreen extends Component {
             return counter.title.toLowerCase().includes(this.state.search.toLowerCase());
         })
 
-        const test = counterFilter.map(el => el.id);
-        const result = test.find(el => el === sendIdCounter)
-
+        const mapOfCounter = counterFilter.map(elem => elem.id);
+        const result = mapOfCounter.find(elemId => elemId === sendIdCounter)
+        
         return (
             <Fragment >
                 <div className="inputSearch">
@@ -110,7 +110,6 @@ class MainScreen extends Component {
                                 </span>
                             ) : null}
                         </p>
-
                         {Object.keys(counterFilter).map(counterKey => {
                             return [...Array(counterFilter[counterKey])].map(counter => {
                                 return (
@@ -132,8 +131,8 @@ class MainScreen extends Component {
                     </ul>
                 ) : null}
                 {counterFilter.length === 0 && !isLoading && !isEmpty && !hasError ? (
-                    <section>
-                        <p>No content</p>
+                    <section className="noResult">
+                        <p>No results</p>
                     </section>
                 ) : null}
                 {hasError ? (
@@ -152,6 +151,7 @@ class MainScreen extends Component {
                                 counterTitle={sendTitleCounter}
                             />
                             <ToolTip totalCount={sendCountCounter}
+                            counterTitle={sendTitleCounter}
                             ></ToolTip>
                         </div>
                         <div className="modalBtn">

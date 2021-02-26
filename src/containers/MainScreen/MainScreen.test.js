@@ -18,14 +18,7 @@ describe('<MainScreen />', () => {
     const wrapper = shallow(<MainScreen />);
     expect(wrapper.find('ul.listOfCounters')).toEqual({});
   });
-
-  // test('should isLoading is true', () => {
-  //   const isLoading = true;
-  //   console.log(Loading);
-
-  //   expect(isLoading).toBe(true);
-  // });
-
+  
   test('should isLoading true when MainScreen is rendering', () => {
     componentDidMount();
     expect(isLoading).toBe(true);

@@ -11,13 +11,13 @@ const ToolTip = (props) => {
 
     return (
         <div>
-            <Button id="PopoverFocus" type="button" className="toolTipBtn" ><OpenIcon /></Button>
-            <UncontrolledPopover trigger="focus" placement="top" target="PopoverFocus" className="mainCard">
+            <Button id="PopoverClick" type="button" className="toolTipBtn" ><OpenIcon /></Button>
+            <UncontrolledPopover trigger="click" placement="top" target="PopoverClick" className="mainCard">
                 <PopoverHeader className="toolTipCard">Shared 1 counter </PopoverHeader>
                 <PopoverBody className="toolTipCard">
                 <Button onClick={() => setIsOpen(!isOpen)} id="copyBtn">Copy</Button>
                 <div className="paperNote">
-                    <p >{props.totalCount}</p>
+                    <p >{props.totalCount} x {props.counterTitle}</p>
                 </div>
                 </PopoverBody>
             </UncontrolledPopover>
